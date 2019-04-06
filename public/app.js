@@ -1,4 +1,9 @@
 $(document).ready(function(){
+    var imgsrc;
+    var resultdiv=$('#result-div')
+    var resultTable=$('#result-table')
+    var btn=$('#Submit')
+    )
     document.getElementById('inp').onchange=function(){
         readURL(this)
     }
@@ -7,6 +12,7 @@ $(document).ready(function(){
             var reader = new FileReader();
 
             reader.onload = function (e) {
+                imgsrc=e.target.result
                 $('#ImgUploaded')
                     .attr('src', e.target.result)
                     .attr('style','visibility:visible')
@@ -17,4 +23,5 @@ $(document).ready(function(){
             reader.readAsDataURL(input.files[0]);
         }
     }
+
 })
