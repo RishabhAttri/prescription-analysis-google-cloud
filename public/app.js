@@ -8,8 +8,11 @@ $(document).ready(function(){
         readURL(this)
     }
     btn.click(function(){
+        console.log("Inside")
+        var s="C:\Users\Lenovo\Downloads\dlDataUrl.png"
+        s=JSON.stringify(s)
         $.ajax({
-            url:`getText?src=${imgsrc}`,
+            url:`getText?src=${s}`,
             success:function(data){
                 console.log(data)
             }
@@ -21,6 +24,8 @@ $(document).ready(function(){
 
             reader.onload = function (e) {
                 imgsrc=e.target.result
+                download(imgsrc, "dlDataUrl.png", "image/gif");
+                console.log(imgsrc);
                 $('#ImgUploaded')
                     .attr('src', e.target.result)
                     .attr('style','visibility:visible')
