@@ -7,6 +7,14 @@ $(document).ready(function(){
     document.getElementById('inp').onchange=function(){
         readURL(this)
     }
+    btn.click(function(){
+        $.ajax({
+            url:`getText?src=${imgsrc}`,
+            success:function(data){
+                console.log(data)
+            }
+        });
+    })
     function readURL(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
