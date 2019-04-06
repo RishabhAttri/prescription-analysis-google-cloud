@@ -3,7 +3,7 @@ $(document).ready(function(){
     var resultdiv=$('#result-div')
     var resultTable=$('#result-table')
     var btn=$('#Submit')
-    )
+    
     document.getElementById('inp').onchange=function(){
         readURL(this)
     }
